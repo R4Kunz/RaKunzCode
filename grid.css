@@ -1,49 +1,174 @@
-<!DOCTYPE html>
-<html lang="id">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initialscale=1.0">
-    <title>Grid RaKunz</title>
-    <link rel="stylesheet" href="grid.css">
-</head>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+}
 
-<body>
-    <div class="page-layout">
-        <header class="site-header">
-            <h1>Website MEME RaKunz</h1>
-            <nav class="header-nav"> <a href="index.html">Beranda</a> <a href="flexbox.html">Flexbox</a> <a
-                    href="grid.html" class="active">Grid</a> <a href="responsive.html">Responsive</a> </nav>
-        </header>
-        <nav class="sidebar">
-            <ul>
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Portofolio</a></li>
-                <li><a href="#">Tentang</a></li>
-            </ul>
-        </nav>
-        <main class="main-content">
-            <h2>Artikel meme terbaru</h2>
-            <p>Konten utama halaman.</p> <!-- Galeri Grid dalam Grid -->
-            <div class="gallery">
-                <div class="gallery-item featured"><img src="homox.jpg" width="620" height="332"></div>
-                <div class="gallery-item"><img src="TokaiTeio.png" width="160" height="160"></div>
-                <div class="gallery-item"><img src="jomox.jpg" width="160" height="160"></div>
-                <div class="gallery-item"><img src="sukses.jfif" width="310" height="160"></div>
-                <div class="gallery-item"><img src="bahlill.jfif" width="250" height="160"></div>
-            </div>
-        </main>
-        <aside class="widget-area">
-            <div class="widget">
-                <h3>Tentang RaKunz</h3>
-                <p>Mahasiswa Teknik Informatika yang sedang belajar membuat stiker meme.</p>
-            </div>
-        </aside>
-        <footer class="site-footer">
-            <p>Copyright 2026 Website RaKunz</p>
-        </footer>
-    </div>
-</body>
+/* LAYOUT UTAMA - grid-template-areas */
+.page-layout {
+    display: grid;
+    grid-template-areas: 'header header header' 'sidebar content widgets' 'footer footer footer';
+    grid-template-columns: 220px 1fr 240px;
+    /* sidebar | konten | widget */
+    grid-template-rows: auto minmax(80vh, auto) auto;
+    min-height: 100vh;
+}
 
-</html>
+/* Hubungkan elemen ke area */
+.site-header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.main-content {
+    grid-area: content;
+}
+
+.widget-area {
+    grid-area: widgets;
+}
+
+.site-footer {
+    grid-area: footer;
+}
+
+/* HEADER */
+.site-header {
+    display: flex;
+    /* flex di dalam grid! */
+    justify-content: space-between;
+    align-items: center;
+    background: #1e293b;
+    color: #fff;
+    padding: 20px 32px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.header-nav a {
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.header-nav a.active {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    padding: 24px 16px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar a {
+    color: #334155;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: #e2e8f0;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    padding: 32px;
+    background: #fff;
+}
+
+.main-content h2 {
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+
+.main-content p {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+/* GALERI (GRID DALAM GRID) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 160px 160px;
+    gap: 12px;
+}
+
+.gallery-item {
+    background: #dbeafe;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e40af;
+    font-weight: bold;
+}
+
+.gallery-item.featured {
+    grid-column: span 2;
+    /* melebar 2 kolom */
+    grid-row: span 2;
+    /* meninggi 2 baris */
+    background: #1e40af;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* WIDGET */
+.widget-area {
+    background: #f8fafc;
+    border-left: 1px solid #e2e8f0;
+    padding: 24px 16px;
+}
+
+.widget {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.widget h3 {
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+x .widget p {
+    color: #64748b;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+.site-footer {
+    background: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 16px;
+    font-size: 0.85rem;
+}
