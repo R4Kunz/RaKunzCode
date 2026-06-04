@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Belajar HTML, CSS & Tailwind CSS</title> <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 font-sans"> <!-- NAVBAR --> <!-- Dulu di M2: 15+ baris CSS. Sekarang: cukup class di HTML -->
+    <nav class="bg-blue-600 text-white px-8 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold"> WebLearn </h1>
+        <ul class="flex gap-6">
+            <li><a href="default.html" class="hover:text-yellow300">Beranda</a></li>
+            <li><a href="grid.html" class="hover:text-yellow300">Materi</a></li>
+            <li><a href="flexbox.html" class="hover:text-yellow300">Kontak</a></li>
+            <li><a href="index.html" class="hover:text-yellow300">Blog</a></li>
+        </ul>
+    </nav> <!-- HERO SECTION -->
+    <section class="bg-white py-20 text-center">
+        <h2 class="text-5xl font-bold text-blue-600 mb-4"> Hi, I'm RaKunz </h2>
+        <p class="text-gray-600 text-lg mb-8"> Bringing ideas to life with clean code and compelling design. </p>
+        <button class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"> Study Club </button>
+    </section> <!-- TENTANG -->
+    <section class="p-10">
+        <div class="bg-white p-8 rounded-xl shadow">
+            <h2 class="text-3xl font-bold text-blue-600 mb-4"> About Me </h2>
+            <p class="text-gray-600 leading-relaxed"> I’m a Informatics Engineering student with a strong interest in
+                web and game development. I’ve led small teams in both academic and client-based projects, coordinating
+                tasks and ensuring ideas were translated into functional digital solutions. These experiences helped me
+                develop communication, teamwork, and basic project management skills in real working environments. I
+                focus on learning through handson projects and continuous improvement, and I’m currently building my
+                portfolio while gaining more experience toward a professional role in the web and game industry. </p>
+        </div>
+    </section> <!-- MATERI — Grid responsif 1→2→3 kolom -->
+    <!-- Dulu di M2: butuh @media query dan grid-template-columns ->     <!-- Sekarang: grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -->
+    <section class="md-grid-cols-2 gap-6 p-10 bg-white">
+        <h2 class="text-3xl font-bold text-center text-blue-600 mb-10"> Materi Pembelajaran </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> <!-- CARD 1 -->
+            <div class="bg-slate-50 p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold text-blue-600 mb-3"> HTML Dasar </h3>
+                <p class="text-gray-600 mb-4"> Mempelajari struktur dasar website menggunakan tag HTML. </p> <button
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"> Pelajari </button>
+            </div> <!-- CARD 2 -->
+            <div class="bg-slate-50 p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold text-blue-600 mb-3"> CSS Dasar </h3>
+                <p class="text-gray-600 mb-4"> Belajar mengatur warna, ukuran, posisi dan tampilan website. </p> <button
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"> Pelajari </button>
+            </div> <!-- CARD 3 -->
+            <div class="bg-slate-50 p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold text-blue-600 mb-3"> Tailwind CSS </h3>
+                <p class="text-gray-600 mb-4"> Membuat website modern dengan utility class yang cepat dan praktis. </p>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"> Pelajari </button>
+            </div> <!-- Card 4-->
+             <div class="bg-slate-50 p-6 rounded-lg shadow">
+                <h3 class="text-xl font-bold text-blue-600 mb-3"> JavaScript </h3>
+                <p class="text-gray-600 mb-4"> Membuat web halaman menjadi lebih interaktif dan dinamis </p>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"> Pelajari </button>
+            </div>
+        </div>
+    </section> <!-- KEUNGGULAN — Flexbox wrap -->
+    <section class="p-10">
+        <h2 class="text-3xl font-bold text-center text-blue-600 mb-10"> Kenapa Belajar Web Development? </h2>
+        <div class="flex flex-wrap gap-6 justify-center">
+            <div class="bg-blue-100 p-6 rounded-lg w-72 text-center"> Skill yang banyak dibutuhkan industri </div>
+            <div class="bg-blue-100 p-6 rounded-lg w-72 text-center"> Bisa membuat website sendiri </div>
+            <div class="bg-blue-100 p-6 rounded-lg w-72 text-center"> Peluang karier yang luas </div>
+        </div>
+    </section> <!-- CTA (Call to Action) -->
+    <section class="bg-blue-600 text-white text-center py-16">
+        <h2 class="text-4xl font-bold mb-4"> Siap Menjadi Web Developer? </h2>
+        <p class="mb-6"> Mulai belajar HTML, CSS dan Tailwind CSS sekarang juga. </p> <button
+            class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-slate-200"> Daftar Sekarang </button>
+    </section> <!-- FOOTER --> <!-- Ingat tag semantic <footer> dari M1? -->
+    <footer class="bg-slate-900 text-white text-center p-6">
+        <p>&copy; 2026 WebLearn | Study Club Pemrograman Web</p>
+    </footer>
+</body>
+
+</html>
